@@ -8,5 +8,5 @@ import java.util.List;
  * @Date 2022/2/26
  */
 public class test {
-    int[] res = {1};
+    Object object = new Object();
 }

@@ -5,14 +5,17 @@ package com.zhoujc.thread.addSynchronized;
  * @Date 2022/2/26
  */
 public class SynchronizedObjectLock implements Runnable {
-    static SynchronizedObjectLock instance = new SynchronizedObjectLock();
+    static SynchronizedObjectLock instance1 = new SynchronizedObjectLock();
+//    static SynchronizedObjectLock instance2 = new SynchronizedObjectLock();
 
     @Override
     public void run() {
         synchronized (this) {
+//        所有线程都用同意一把锁
+//        synchronized (SynchronizedObjectLock.class) {
             System.out.println("我是线程" + Thread.currentThread().getName());
             try {
-                Thread.sleep(3000);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -21,8 +24,8 @@ public class SynchronizedObjectLock implements Runnable {
     }
 
     public static void main(String[] args) {
-        Thread t1 = new Thread(instance);
-        Thread t2 = new Thread(instance);
+        Thread t1 = new Thread(instance1);
+        Thread t2 = new Thread(instance1);
         t1.start();
         t2.start();
     }

@@ -15,7 +15,7 @@ public class SynchronizedObjectLock2 implements Runnable {
         synchronized (block1) {
             System.out.println("block1锁，我是线程:" + Thread.currentThread().getName());
             try {
-                Thread.sleep(3000);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -25,12 +25,13 @@ public class SynchronizedObjectLock2 implements Runnable {
         synchronized (block2) {
             System.out.println("block2锁，我是线程:" + Thread.currentThread().getName());
             try {
-                Thread.sleep(3000);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
             System.out.println("block2锁," + Thread.currentThread().getName() + "结束");
         }
+
     }
 
     public static void main(String[] args) {
