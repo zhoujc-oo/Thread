@@ -10,6 +10,8 @@ import static java.lang.Thread.sleep;
  * @Date 2022/2/26
  */
 public class MyThread {
+    public void start() {
+    }
 //    Thread thread = new Thread();
 //    ExecutorService executorService = Executors.newCachedThreadPool();
 //    public void run(){
